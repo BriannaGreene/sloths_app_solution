@@ -1,21 +1,25 @@
 {
-  "name": "sloths_app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "body-parser": "^1.17.1",
-    "chai": "^3.5.0",
-    "express": "^4.15.2",
-    "knex": "^0.12.9",
-    "mocha": "^3.2.0",
-    "pg": "^6.1.5",
-    "supertest": "^3.0.0"
-  },
-  "devDependencies": {},
+  "name": "sloths-app",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www",
+    "test": "mocha ./test/test-app.js"
   },
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "express": "^4.14.1",
+    "hbs": "~4.0.1",
+    "knex": "^0.12.9",
+    "morgan": "~1.7.0",
+    "pg": "^6.1.5",
+    "serve-favicon": "~2.3.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "supertest": "^3.0.0"
+  }
 }
