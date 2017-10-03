@@ -1,11 +1,12 @@
 'use strict';
 
 module.exports = {
-  dev: {},
+  dev: {
+
+  },
   test: {
     client: 'pg',
-    connection: 'postgres://localhost/knex_sloths_test',
-    debug: false
+    connection: 'postgres://localhost/knex_sloths_test'
   },
   production: {}
 };

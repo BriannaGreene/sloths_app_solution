@@ -7,7 +7,7 @@ const knex = require('../knex');
 
 
 // Things to do before/after each test runs
-beforeEach(done => {
+beforeEach( (done) => {
   Promise.all([
     knex('sloths').insert({id: 1, name: 'Jerry', age: 4, image: 'https://gifts.worldwildlife.org/gift-center/Images/large-species-photo/large-Three-toed-Sloth-photo.jpg'}),
     knex('sloths').insert({id: 2, name: 'Sally', age: 2, image: 'http://www.wildlifeextra.com/resources/listimg/world/Africa/3_toed_sloth@large.jpg'}),
@@ -15,7 +15,12 @@ beforeEach(done => {
   ]).then(() => done());
 });
 
-afterEach(done => { knex('sloths').del().then(() => done()) });
+afterEach( (done) => {
+  knex('sloths').del().then(() => {
+      done()
+    }
+  )
+});
 
 
 // Actual tests
@@ -53,7 +58,7 @@ describe('GET /sloths', () => {
   });
 });
 
-describe('GET /sloths/:id', () => {
+xdescribe('GET /sloths/:id', () => {
   it('responds with specific JSON sloth Sawyer, id=3: ', done => {
     request(app)
       .get('/sloths/3')
@@ -69,8 +74,7 @@ describe('GET /sloths/:id', () => {
   });
 });
 
-
-describe('POST /sloths', () => {
+xdescribe('POST /sloths', () => {
 
   var newSloth = {
     sloth: {
@@ -106,7 +110,7 @@ describe('POST /sloths', () => {
 
 });
 
-describe('PUT /sloths/:id', () =>{
+xdescribe('PUT /sloths/:id', () =>{
 
   var updatedSloth = {
     sloth: {
